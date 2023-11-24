@@ -29,5 +29,9 @@ public class CreateAccount {
             System.out.println("Database connection failure.");
             e.printStackTrace();
         }
+
+        System.out.println("User added successfully");
+
+        HomePage.home(accountNumber);
     }
 }

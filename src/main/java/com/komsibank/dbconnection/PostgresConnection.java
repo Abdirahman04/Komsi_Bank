@@ -3,7 +3,7 @@ package com.komsibank.dbconnection;
 import java.sql.*;
 
 public class PostgresConnection {
-    private final String url = "jdbc:postgresql://localhost:5432/postgres";
+    private final String url = "jdbc:postgresql://localhost:5432/komsi_bankdb";
     private final String user = "abdirahman";
     private final String password = "Kiliman7504200235!";
 
@@ -23,14 +23,15 @@ public class PostgresConnection {
         return DriverManager.getConnection(url, user, password);
     }
 
-    public void insertUserData(Connection connection, String accountNumber, String firstName, String lastName, String email, String password) throws SQLException {
-        String sql = "INSERT INTO users(account_number, first_name, last_name, email, password) VALUES (?, ?, ?, ?, ?)";
+    public void insertUserData(Connection connection, String accNumber, String firstName, String lastName, String email, double balance, String password) throws SQLException {
+        String sql = "INSERT INTO users(account_number, first_name, last_name, email, balance, password) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, accountNumber);
+            preparedStatement.setString(1, accNumber);
             preparedStatement.setString(2, firstName);
             preparedStatement.setString(3, lastName);
             preparedStatement.setString(4, email);
-            preparedStatement.setString(5, password);
+            preparedStatement.setDouble(5, balance);
+            preparedStatement.setString(6, password);
 
             int affectedRows = preparedStatement.executeUpdate();
             System.out.println("Rows affected: " + affectedRows);

@@ -25,6 +25,7 @@ public class Login {
                 System.out.println("Login successful!");
                 HomePage.home(accNumber);
             }
+            else System.out.println("User account does not exist!");
         } catch (SQLException e) {
             System.out.println("Database connection failure.");
             e.printStackTrace();

@@ -22,15 +22,16 @@ public class CreateAccount {
         System.out.print("Password: ");
         String pass = sc.nextLine();
 
+        String fullName = fname + " " + lname;
+
         PostgresConnection conn = new PostgresConnection();
         try (Connection connection = conn.connectToDatabase(conn.getUrl(), conn.getUser(), conn.getPassword())) {
-            conn.insertUserData(connection, accountNumber, fname, lname, email, pass);
+            conn.insertUserData(connection, accountNumber, fname, lname, email, 0, pass);
+            System.out.println("User added successfully");
         } catch (SQLException e) {
             System.out.println("Database connection failure.");
             e.printStackTrace();
         }
-
-        System.out.println("User added successfully");
 
         HomePage.home(accountNumber);
     }

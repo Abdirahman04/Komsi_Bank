@@ -23,8 +23,8 @@ public class CreateAccount {
         String pass = sc.nextLine();
 
         PostgresConnection conn = new PostgresConnection();
-        try (Connection connection = PostgresConnection.connectToDatabase(conn.getUrl(), conn.getUser(), conn.getPassword())) {
-            PostgresConnection.insertUserData(connection, accountNumber, fname, lname, email, pass);
+        try (Connection connection = conn.connectToDatabase(conn.getUrl(), conn.getUser(), conn.getPassword())) {
+            conn.insertUserData(connection, accountNumber, fname, lname, email, pass);
         } catch (SQLException e) {
             System.out.println("Database connection failure.");
             e.printStackTrace();

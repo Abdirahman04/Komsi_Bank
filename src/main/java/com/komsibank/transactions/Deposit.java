@@ -22,6 +22,7 @@ public class Deposit {
         try (Connection connection = conn.connectToDatabase(conn.getUrl(), conn.getUser(), conn.getPassword())) {
             conn.changeBalance(connection,accNumber,true,deposit);
             conn.insertTransactionData(connection,accNumber,"deposit",deposit);
+
             System.out.println("Money deposited successfully");
             HomePage.home(accNumber);
         } catch (SQLException e) {
@@ -34,11 +35,14 @@ public class Deposit {
             System.out.println("Incorrect input!!");
             deposit(accNumber);
         }
+
         double newDeposit = Double.parseDouble(deposit);
+
         if(newDeposit <= 0) {
             System.out.println("Deposit should be more than 0!!");
             deposit(accNumber);
         }
+
         return newDeposit;
     }
 }

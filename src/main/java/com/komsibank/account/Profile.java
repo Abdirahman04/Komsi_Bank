@@ -13,8 +13,10 @@ public class Profile {
         System.out.println(">>>>>     PROFILE     <<<<<\n");
 
         PostgresConnection conn = new PostgresConnection();
+
         try (Connection connection = conn.connectToDatabase(conn.getUrl(), conn.getUser(), conn.getPassword())) {
             User user = conn.getUser(connection,accNumber);
+
             System.out.println(">>  Name: " + user.getFname()+ " "+ user.getLname());
             System.out.println(">>  Email: " + user.getEmail());
             System.out.println(">>  Account number: " + accNumber);

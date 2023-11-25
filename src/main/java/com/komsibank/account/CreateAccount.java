@@ -50,6 +50,7 @@ public class CreateAccount {
             System.out.println("Not a valid email!!");
             newAccount();
         }
+
         return email;
     }
     private static String checkAccountNumber(String accNumber) {
@@ -57,10 +58,12 @@ public class CreateAccount {
             System.out.println("Account number should be a number!!");
             newAccount();
         }
+
         if(accNumber.length() < 9 || accNumber.length() > 10) {
             System.out.println("Account number should be 9 to 10 digits long!!");
             newAccount();
         }
+
         return accNumber;
     }
     private static String checkPassword(String pass) {
@@ -68,10 +71,12 @@ public class CreateAccount {
             System.out.println("Password should be at least 4 characters long");
             newAccount();
         }
+
         if(pass.length() > 19) {
             System.out.println("Password should not exceed 20 characters");
             newAccount();
         }
+
         return pass;
     }
 }

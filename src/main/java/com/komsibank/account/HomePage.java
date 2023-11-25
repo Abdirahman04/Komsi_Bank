@@ -11,6 +11,7 @@ public class HomePage {
     public static void home(String accNumber) {
 
         Scanner sc = new Scanner(System.in);
+
         System.out.println("     1. <Profile>");
         System.out.println("     2. <Deposit money>");
         System.out.println("     3. <Withdraw money>");

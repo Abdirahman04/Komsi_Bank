@@ -23,6 +23,7 @@ public class PostgresConnection {
         return DriverManager.getConnection(url, user, password);
     }
 
+    //Add user to database
     public void insertUserData(Connection connection, String accNumber, String firstName, String lastName, String email, double balance, String password) throws SQLException {
         String sql = "INSERT INTO users(account_number, first_name, last_name, email, balance, password) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -38,6 +39,7 @@ public class PostgresConnection {
         }
     }
 
+    //Check if the user exists
     public boolean doesUserExist(Connection connection, String accountNumber, String password) throws SQLException {
         String sql = "SELECT * FROM users WHERE account_number = ? AND password = ?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -45,10 +47,12 @@ public class PostgresConnection {
             preparedStatement.setString(2, password);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                return resultSet.next(); // true if a record is found, false otherwise
+                return resultSet.next();
             }
         }
     }
+
+    //Get the details of a single user using account number
     public User getUser(Connection connection, String accountNumber) throws SQLException {
         String sql = "SELECT first_name,last_name,email,account_number,balance FROM users WHERE account_number = ?";
 
@@ -73,6 +77,7 @@ public class PostgresConnection {
         return user;
     }
 
+    //Change the balance of the user either addition for deposits or subtraction for withdrawals
     public void changeBalance(Connection connection, String accountNumber, boolean isDeposit, double balance) throws SQLException {
         String updateSql = isDeposit
                 ? "UPDATE users SET balance = balance + ? WHERE account_number = ?"
@@ -91,6 +96,8 @@ public class PostgresConnection {
             }
         }
     }
+
+    //Record the transaction made either deposit or withdrawal
     public void insertTransactionData(Connection connection, String accNumber, String transType, double amount) throws SQLException {
         String sql = "INSERT INTO basictransactions(transaction_type,transaction_amount,account_number) VALUES (?, ?, ?)";
 
@@ -104,6 +111,7 @@ public class PostgresConnection {
         }
     }
 
+    //Record transaction during transfer
     public void insertTransferTransactionData(Connection connection, String sender, String recipient, double amount) throws SQLException {
         String sql = "INSERT INTO transfertransactions(transfer_transaction_amount,sender_account_number,recipient_account_number) VALUES (?, ?, ?)";
 
@@ -117,7 +125,9 @@ public class PostgresConnection {
         }
     }
 
+    //Get all the transactions of a single user
     public void getAllTransactions(Connection connection, String accNumber) throws SQLException {
+        //Get withdrawals and deposits
         String basicTransactionSql = "SELECT * FROM basictransactions where account_number = ?";
 
         try (PreparedStatement preparedStatement1 = connection.prepareStatement(basicTransactionSql)) {
@@ -135,6 +145,7 @@ public class PostgresConnection {
             }
         }
 
+        //Get the information on money sent
         String senderTransactionSql = "SELECT * FROM transfertransactions where sender_account_number = ?";
 
         try (PreparedStatement preparedStatement2 = connection.prepareStatement(senderTransactionSql)) {
@@ -151,6 +162,8 @@ public class PostgresConnection {
                 }
             }
         }
+
+        //Get the information on money received
         String recipientTransactionSql = "SELECT * FROM transfertransactions where recipient_account_number = ?";
 
         try (PreparedStatement preparedStatement3 = connection.prepareStatement(recipientTransactionSql)) {
@@ -168,7 +181,10 @@ public class PostgresConnection {
             }
         }
     }
+
+    //Delete account
     public void deleteAccount(Connection connection, String accNumber) throws SQLException {
+        //Delete from users table
         String deleteSql = "DELETE FROM users WHERE account_number = ?";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(deleteSql)) {
@@ -182,6 +198,7 @@ public class PostgresConnection {
             }
         }
 
+        //Delete the transactions of the user
         String deleteSql2 = "DELETE FROM basictransactions WHERE account_number = ?";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(deleteSql2)) {
@@ -195,6 +212,8 @@ public class PostgresConnection {
             }
         }
     }
+
+    //Check if a given balance exceeds the users current balance
     public boolean isBalanceMore(Connection connection, String accountNumber, double balance) throws SQLException {
         String selectSql = "SELECT balance FROM users WHERE account_number = ?";
 

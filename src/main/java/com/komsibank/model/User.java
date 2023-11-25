@@ -6,6 +6,7 @@ public class User {
     String accountNumber;
     String email;
     String pin;
+    double balance;
 
     public String getFname() {
         return fname;
@@ -45,5 +46,13 @@ public class User {
 
     public void setPin(String pin) {
         this.pin = pin;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }

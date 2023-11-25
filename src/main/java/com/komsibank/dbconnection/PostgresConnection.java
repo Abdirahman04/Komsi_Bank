@@ -1,5 +1,8 @@
 package com.komsibank.dbconnection;
 
+import com.komsibank.account.HomePage;
+import com.komsibank.model.User;
+
 import java.sql.*;
 
 public class PostgresConnection {
@@ -47,6 +50,59 @@ public class PostgresConnection {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 return resultSet.next(); // true if a record is found, false otherwise
             }
+        }
+    }
+    public User getUser(Connection connection, String accountNumber) throws SQLException {
+        String sql = "SELECT first_name,last_name,email,account_number,balance FROM users WHERE account_number = ?";
+        User user = new User();
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, accountNumber);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    user.setFname(resultSet.getString("first_name"));
+                    user.setLname(resultSet.getString("last_name"));
+                    user.setEmail(resultSet.getString("email"));
+                    user.setBalance(resultSet.getDouble("balance"));
+                } else {
+                    System.out.println("User not found");
+                    HomePage.home(accountNumber);
+                }
+            }
+        }
+
+        return user;
+    }
+
+    public void changeBalance(Connection connection, String accountNumber, boolean isDeposit, double balance) throws SQLException {
+        String updateSql = isDeposit
+                ? "UPDATE users SET balance = balance + ? WHERE account_number = ?"
+                : "UPDATE users SET balance = balance - ? WHERE account_number = ?";
+
+        // Create a prepared statement
+        try (PreparedStatement preparedStatement = connection.prepareStatement(updateSql)) {
+            // Set parameters
+            preparedStatement.setDouble(1, balance);
+            preparedStatement.setString(2, accountNumber);
+
+            // Execute the update
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Amount updated successfully.");
+            } else {
+                System.out.println("User not found or no rows updated.");
+            }
+        }
+    }
+    public void insertTransactionData(Connection connection, String accNumber, String transType, double amount) throws SQLException {
+        String sql = "INSERT INTO basictransactions(transaction_type,transaction_amount,account_number) VALUES (?, ?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, transType);
+            preparedStatement.setDouble(2, amount);
+            preparedStatement.setString(3, accNumber);
+
+            int affectedRows = preparedStatement.executeUpdate();
+            System.out.println("Rows affected: " + affectedRows);
         }
     }
 }

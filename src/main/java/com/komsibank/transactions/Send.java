@@ -20,6 +20,10 @@ public class Send {
 
         PostgresConnection conn = new PostgresConnection();
         try (Connection connection = conn.connectToDatabase(conn.getUrl(), conn.getUser(), conn.getPassword())) {
+            if(conn.isBalanceMore(connection,accNumber,amount)) {
+                System.out.println("You do not have enough funds!!");
+                send(accNumber);
+            }
             conn.changeBalance(connection,accNumber,false,amount);
             conn.changeBalance(connection,recipient,true,amount);
             conn.insertTransferTransactionData(connection,accNumber,recipient,amount);

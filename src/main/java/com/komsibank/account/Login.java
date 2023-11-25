@@ -1,5 +1,6 @@
 package com.komsibank.account;
 
+import com.komsibank.BankApp;
 import com.komsibank.dbconnection.PostgresConnection;
 
 import java.sql.Connection;
@@ -19,13 +20,15 @@ public class Login {
         PostgresConnection conn = new PostgresConnection();
 
         try (Connection connection = conn.connectToDatabase(conn.getUrl(), conn.getUser(), conn.getPassword())) {
-            // Check if a user with a specific account number and password exists
             boolean userExists = conn.doesUserExist(connection, accNumber, pass);
             if (userExists) {
                 System.out.println("Login successful!");
                 HomePage.home(accNumber);
             }
-            else System.out.println("User account does not exist!");
+            else {
+                System.out.println("User account does not exist!");
+                BankApp.menu();
+            }
         } catch (SQLException e) {
             System.out.println("Database connection failure.");
             e.printStackTrace();

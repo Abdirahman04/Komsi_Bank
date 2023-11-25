@@ -178,4 +178,19 @@ public class PostgresConnection {
             }
         }
     }
+    public boolean isBalanceMore(Connection connection, String accountNumber, double balance) throws SQLException {
+        String selectSql = "SELECT balance FROM users WHERE account_number = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectSql)) {
+            preparedStatement.setString(1, accountNumber);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    double currentNumber = resultSet.getDouble("balance");
+                    return balance > currentNumber;
+                } else {
+                    System.out.println("User not found in the database.");
+                    return false;
+                }
+            }
+        }
+    }
 }

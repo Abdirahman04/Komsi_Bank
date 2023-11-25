@@ -4,6 +4,7 @@ import com.komsibank.account.HomePage;
 import com.komsibank.model.User;
 
 import java.sql.*;
+import java.util.HashMap;
 
 public class PostgresConnection {
     private final String url = "jdbc:postgresql://localhost:5432/komsi_bankdb";
@@ -103,6 +104,60 @@ public class PostgresConnection {
 
             int affectedRows = preparedStatement.executeUpdate();
             System.out.println("Rows affected: " + affectedRows);
+        }
+    }
+
+    public void insertTransferTransactionData(Connection connection, String sender, String recipient, double amount) throws SQLException {
+        String sql = "INSERT INTO transfertransactions(transfer_transaction_amount,sender_account_number,recipient_account_number) VALUES (?, ?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setDouble(1, amount);
+            preparedStatement.setString(2, sender);
+            preparedStatement.setString(3, recipient);
+
+            int affectedRows = preparedStatement.executeUpdate();
+            System.out.println("Rows affected: " + affectedRows);
+        }
+    }
+
+    public void getAllTransactions(Connection connection, String accNumber) throws SQLException {
+        String basicTransactionSql = "SELECT * FROM basictransactions where account_number = ?";
+        try (PreparedStatement preparedStatement1 = connection.prepareStatement(basicTransactionSql)) {
+            preparedStatement1.setString(1, accNumber);
+            try (ResultSet resultSet1 = preparedStatement1.executeQuery()) {
+                while (resultSet1.next()) {
+                    String transactionType = resultSet1.getString("transaction_type");
+                    double transactionAmount = resultSet1.getDouble("transaction_amount");
+                    System.out.println("   +------------------------------------------");
+                    System.out.println("   |A " + transactionType+" of "+transactionAmount+" was made.");
+                    System.out.println("   +------------------------------------------");
+                }
+            }
+        }
+        String senderTransactionSql = "SELECT * FROM transfertransactions where sender_account_number = ?";
+        try (PreparedStatement preparedStatement2 = connection.prepareStatement(senderTransactionSql)) {
+            preparedStatement2.setString(1, accNumber);
+            try (ResultSet resultSet2 = preparedStatement2.executeQuery()) {
+                while (resultSet2.next()) {
+                    String recipient = resultSet2.getString("recipient_account_number");
+                    double transactionAmount = resultSet2.getDouble("transfer_transaction_amount");
+                    System.out.println("   +------------------------------------------");
+                    System.out.println("   |"+transactionAmount+" was sent to "+recipient);
+                    System.out.println("   +------------------------------------------");
+                }
+            }
+        }
+        String recipientTransactionSql = "SELECT * FROM transfertransactions where recipient_account_number = ?";
+        try (PreparedStatement preparedStatement3 = connection.prepareStatement(recipientTransactionSql)) {
+            preparedStatement3.setString(1, accNumber);
+            try (ResultSet resultSet3 = preparedStatement3.executeQuery()) {
+                while (resultSet3.next()) {
+                    String sender = resultSet3.getString("sender_account_number");
+                    double transactionAmount = resultSet3.getDouble("transfer_transaction_amount");
+                    System.out.println("   +------------------------------------------");
+                    System.out.println("   |Received "+transactionAmount+" from "+sender);
+                    System.out.println("   +------------------------------------------");
+                }
+            }
         }
     }
 }

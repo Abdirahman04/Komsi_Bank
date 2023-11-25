@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class BankApp {
     public static void main(String[] args) {
-        System.out.println("WELCOME TO THE NATIONAL BANK OF KENYA");
+        System.out.println(">>>>    WELCOME TO KOMSI BANK    <<<<");
 
         menu();
     }

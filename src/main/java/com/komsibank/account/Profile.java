@@ -1,5 +1,6 @@
 package com.komsibank.account;
 
+import com.komsibank.BankApp;
 import com.komsibank.dbconnection.PostgresConnection;
 import com.komsibank.model.User;
 
@@ -30,19 +31,22 @@ public class Profile {
         Scanner sc = new Scanner(System.in);
         String ans = sc.nextLine();
 
-        if(ans.equals("1")) PreviousTransactions.transactions(accNumber);
-        else if(ans.equals("3")) HomePage.home(accNumber);
-        else if(ans.equals("2")) {
-            System.out.println("Are you sure you want to delete your account! [y/n]");
-            System.out.print(">>>>    ");
-
-            String deleteAns = sc.nextLine();
-
-            if(deleteAns.equals("y")) {
-                System.out.println("delete");
-//                DeleteAccount.deleteThisAccount(accNumber);
-//                System.out.println("Account deleted successfully");
-//                BankApp.menu();
+        switch (ans) {
+            case "1" -> PreviousTransactions.transactions(accNumber);
+            case "3" -> HomePage.home(accNumber);
+            case "2" -> {
+                System.out.println("Are you sure you want to delete your account! [y/n]");
+                System.out.print(">>>>    ");
+                String deleteAns = sc.nextLine();
+                if (deleteAns.equals("y")) {
+                    try (Connection connection = conn.connectToDatabase(conn.getUrl(), conn.getUser(), conn.getPassword())) {
+                        conn.deleteAccount(connection, accNumber);
+                    } catch (SQLException e) {
+                        System.out.println("Database connection failure.");
+                        e.printStackTrace();
+                    }
+                    BankApp.menu();
+                }
             }
         }
     }

@@ -4,23 +4,19 @@ import com.komsibank.account.HomePage;
 import com.komsibank.model.User;
 
 import java.sql.*;
-import java.util.HashMap;
 
 public class PostgresConnection {
-    private final String url = "jdbc:postgresql://localhost:5432/komsi_bankdb";
-    private final String user = "abdirahman";
-    private final String password = "Kiliman7504200235!";
 
     public String getUrl() {
-        return url;
+        return "jdbc:postgresql://localhost:5432/komsi_bankdb";
     }
 
     public String getUser() {
-        return user;
+        return "abdirahman";
     }
 
     public String getPassword() {
-        return password;
+        return "Kiliman7504200235!";
     }
 
     public Connection connectToDatabase(String url, String user, String password) throws SQLException {
@@ -157,6 +153,28 @@ public class PostgresConnection {
                     System.out.println("   |Received "+transactionAmount+" from "+sender);
                     System.out.println("   +------------------------------------------");
                 }
+            }
+        }
+    }
+    public void deleteAccount(Connection connection, String accNumber) throws SQLException {
+        String deleteSql = "DELETE FROM users WHERE account_number = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteSql)) {
+            preparedStatement.setString(1, accNumber);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("User deleted successfully.");
+            } else {
+                System.out.println("User not found or no rows deleted.");
+            }
+        }
+        String deleteSql2 = "DELETE FROM basictransactions WHERE account_number = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(deleteSql2)) {
+            preparedStatement.setString(1, accNumber);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("User transactions information deleted successfully.");
+            } else {
+                System.out.println("User not found or no rows deleted.");
             }
         }
     }

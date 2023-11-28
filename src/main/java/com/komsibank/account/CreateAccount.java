@@ -47,12 +47,13 @@ public class CreateAccount {
             conn.insertUserData(connection, accountNumber, fname, lname, email, 0, pass);
             System.out.println("User added successfully");
             BankApp.mainLogger.info("account created successfully");
+            BankApp.accountLogger.info("user: " + accountNumber + " account created");
         } catch (SQLException e) {
             System.out.println("Database connection failure.");
             BankApp.mainLogger.log(Level.SEVERE,"db connection error",e);
             BankApp.menu();
         }
-
+        BankApp.accountLogger.info("user: " + accountNumber + " logged in");
         HomePage.home(accountNumber);
     }
     private static String checkEmail(String email) {

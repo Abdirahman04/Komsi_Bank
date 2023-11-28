@@ -42,3 +42,65 @@ Nov 28, 2023 2:05:31 PM com.komsibank.account.HomePage home
 INFO: user: 115800303 logged out
 Nov 28, 2023 2:05:33 PM com.komsibank.BankApp menu
 INFO: application has been stopped
+Nov 28, 2023 2:30:14 PM com.komsibank.BankApp main
+INFO: application has started
+Nov 28, 2023 2:30:17 PM com.komsibank.BankApp menu
+INFO: login selected
+Nov 28, 2023 2:30:22 PM com.komsibank.account.Login login
+INFO: account number inputted
+Nov 28, 2023 2:30:26 PM com.komsibank.account.Login login
+INFO: password inputted
+Nov 28, 2023 2:30:27 PM com.komsibank.account.Login login
+INFO: login successful
+Nov 28, 2023 2:30:27 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Nov 28, 2023 2:30:27 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:30:28 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Nov 28, 2023 2:30:29 PM com.komsibank.account.Profile profile
+INFO: user: 115800303 profile page loaded
+Nov 28, 2023 2:30:31 PM com.komsibank.account.Profile profile
+INFO: previous transactions selected
+Nov 28, 2023 2:30:31 PM com.komsibank.account.PreviousTransactions transactions
+INFO: user: 115800303 previous transactions displayed
+Nov 28, 2023 2:30:31 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:30:35 PM com.komsibank.account.HomePage home
+INFO: deposit selected
+Nov 28, 2023 2:30:35 PM com.komsibank.transactions.Deposit deposit
+INFO: user: 115800303 deposit page
+Nov 28, 2023 2:30:40 PM com.komsibank.transactions.Deposit deposit
+INFO: user: 115800303 deposited 540000.0
+Nov 28, 2023 2:30:40 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:30:47 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Nov 28, 2023 2:30:47 PM com.komsibank.account.Profile profile
+INFO: user: 115800303 profile page loaded
+Nov 28, 2023 2:30:49 PM com.komsibank.account.Profile profile
+INFO: previous transactions selected
+Nov 28, 2023 2:30:49 PM com.komsibank.account.PreviousTransactions transactions
+INFO: user: 115800303 previous transactions displayed
+Nov 28, 2023 2:30:50 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:30:58 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Nov 28, 2023 2:30:58 PM com.komsibank.account.Profile profile
+INFO: user: 115800303 profile page loaded
+Nov 28, 2023 2:31:01 PM com.komsibank.account.Profile profile
+INFO: back selected
+Nov 28, 2023 2:31:01 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:31:03 PM com.komsibank.account.HomePage home
+INFO: withdraw selected
+Nov 28, 2023 2:31:03 PM com.komsibank.transactions.Withdraw withdraw
+INFO: user: 115800303 withdraw page
+Nov 28, 2023 2:31:06 PM com.komsibank.transactions.Withdraw withdraw
+INFO: user: 115800303 withdrew 50000.0
+Nov 28, 2023 2:31:06 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:31:10 PM com.komsibank.account.HomePage home
+INFO: user: 115800303 logged out
+Nov 28, 2023 2:31:12 PM com.komsibank.BankApp menu
+INFO: application has been stopped

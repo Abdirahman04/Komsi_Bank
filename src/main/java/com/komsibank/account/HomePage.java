@@ -5,7 +5,9 @@ import com.komsibank.transactions.Deposit;
 import com.komsibank.transactions.Send;
 import com.komsibank.transactions.Withdraw;
 
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.*;
 
 public class HomePage {
     public static void home(String accNumber) {
@@ -17,7 +19,7 @@ public class HomePage {
         System.out.println("     2. <Deposit money>");
         System.out.println("     3. <Withdraw money>");
         System.out.println("     4. <Send money>");
-        System.out.println("     5. <Go back to main menu>");
+        System.out.println("     5. <Log out>");
         System.out.print(">>>>>>>>>>    ");
 
         String ans = sc.nextLine();
@@ -40,6 +42,7 @@ public class HomePage {
         }
         if (ans.equals("5")) {
             BankApp.mainLogger.info("user: " + accNumber + " logged out");
+            BankApp.accountLogger.info("user: " + accNumber + " logged out");
             BankApp.menu();
         }
         else home(accNumber);

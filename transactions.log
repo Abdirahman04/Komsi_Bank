@@ -1,0 +1,4 @@
+Nov 28, 2023 2:56:25 PM com.komsibank.transactions.Deposit deposit
+INFO: user: 115800303 deposited 65000.0
+Nov 28, 2023 2:56:50 PM com.komsibank.transactions.Deposit deposit
+INFO: user: 115800303 deposited 55000.0

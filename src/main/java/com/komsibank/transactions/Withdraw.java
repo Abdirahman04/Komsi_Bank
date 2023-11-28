@@ -27,6 +27,7 @@ public class Withdraw {
             conn.changeBalance(connection,accNumber,false,withdraw);
             conn.insertTransactionData(connection,accNumber,"withdrawal",withdraw);
             BankApp.mainLogger.info("user: " + accNumber + " withdrew " + withdraw);
+            BankApp.transactionsLogger.info("user: " + accNumber + " withdrew " + withdraw);
 
             System.out.println("Money withdrawn successfully");
 
@@ -55,7 +56,6 @@ public class Withdraw {
             if(conn.isBalanceMore(connection,accNumber,newWithdrawal)) {
                 System.out.println("You don't have enough funds!!");
                 BankApp.mainLogger.info("user: " + accNumber + " checkWithdrawal: invalid input");
-                BankApp.transactionsLogger.info("user: " + accNumber + " checkWithdrawal: invalid input");
                 withdraw(accNumber);
             }
         } catch (SQLException e) {

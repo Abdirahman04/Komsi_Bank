@@ -1,0 +1,20 @@
+Nov 28, 2023 1:46:53 PM com.komsibank.BankApp main
+INFO: application has started
+Nov 28, 2023 1:46:57 PM com.komsibank.BankApp menu
+INFO: login selected
+Nov 28, 2023 1:47:12 PM com.komsibank.BankApp menu
+INFO: help selected
+Nov 28, 2023 1:47:14 PM com.komsibank.BankApp menu
+INFO: application has been stopped
+Nov 28, 2023 1:52:37 PM com.komsibank.BankApp main
+INFO: application has started
+Nov 28, 2023 1:52:42 PM com.komsibank.BankApp menu
+INFO: login selected
+Nov 28, 2023 1:52:46 PM com.komsibank.account.Login login
+INFO: account number inputted
+Nov 28, 2023 1:52:51 PM com.komsibank.account.Login login
+INFO: password inputted
+Nov 28, 2023 1:52:52 PM com.komsibank.account.Login login
+INFO: login successful
+Nov 28, 2023 1:52:56 PM com.komsibank.BankApp menu
+INFO: application has been stopped

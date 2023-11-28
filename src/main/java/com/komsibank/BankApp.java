@@ -19,7 +19,7 @@ public class BankApp {
                     rootLogger.removeHandler(handler);
                 }
             }
-            Handler fileHandler = new FileHandler("logs/application.log", true);
+            Handler fileHandler = new FileHandler("application.log", true);
             fileHandler.setFormatter(new SimpleFormatter());
             mainLogger.addHandler(fileHandler);
             mainLogger.setLevel(Level.ALL);
@@ -28,6 +28,7 @@ public class BankApp {
         }
     }
     public static void main(String[] args) {
+        mainLogger.info("application has started");
         System.out.println(">>>>    WELCOME TO KOMSI BANK    <<<<");
 
         menu();
@@ -46,10 +47,22 @@ public class BankApp {
         System.out.print(">>>>>>>>>>    ");
         String ans = sc.nextLine();
 
-        if (ans.equals("1")) Login.login();
-        if (ans.equals("2")) CreateAccount.newAccount();
-        if (ans.equals("3")) Help.help();
-        if (ans.equals("4")) System.exit(0);
+        if (ans.equals("1")) {
+            mainLogger.info("login selected");
+            Login.login();
+        }
+        if (ans.equals("2")) {
+            mainLogger.info("create account selected");
+            CreateAccount.newAccount();
+        }
+        if (ans.equals("3")) {
+            mainLogger.info("help selected");
+            Help.help();
+        }
+        if (ans.equals("4")) {
+            mainLogger.info("application has been stopped");
+            System.exit(0);
+        }
         else menu();
     }
 

@@ -55,6 +55,7 @@ public class Withdraw {
             if(conn.isBalanceMore(connection,accNumber,newWithdrawal)) {
                 System.out.println("You don't have enough funds!!");
                 BankApp.mainLogger.info("user: " + accNumber + " checkWithdrawal: invalid input");
+                BankApp.transactionsLogger.info("user: " + accNumber + " checkWithdrawal: invalid input");
                 withdraw(accNumber);
             }
         } catch (SQLException e) {

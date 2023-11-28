@@ -1,0 +1,10 @@
+Nov 28, 2023 2:48:29 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Nov 28, 2023 2:48:31 PM com.komsibank.account.HomePage home
+INFO: user: 115800303 logged out
+Nov 28, 2023 2:49:10 PM com.komsibank.account.CreateAccount newAccount
+INFO: user: 3399293834 account created
+Nov 28, 2023 2:49:10 PM com.komsibank.account.CreateAccount newAccount
+INFO: user: 3399293834 logged in
+Nov 28, 2023 2:49:13 PM com.komsibank.account.HomePage home
+INFO: user: 3399293834 logged out

@@ -26,6 +26,7 @@ public class Deposit {
             conn.changeBalance(connection,accNumber,true,deposit);
             conn.insertTransactionData(connection,accNumber,"deposit",deposit);
             BankApp.mainLogger.info("user: " + accNumber + " deposited " + deposit);
+            BankApp.transactionsLogger.info("user: " + accNumber + " deposited " + deposit);
 
             System.out.println("Money deposited successfully");
             HomePage.home(accNumber);

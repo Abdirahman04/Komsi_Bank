@@ -104,3 +104,51 @@ Nov 28, 2023 2:31:10 PM com.komsibank.account.HomePage home
 INFO: user: 115800303 logged out
 Nov 28, 2023 2:31:12 PM com.komsibank.BankApp menu
 INFO: application has been stopped
+Nov 28, 2023 2:48:15 PM com.komsibank.BankApp main
+INFO: application has started
+Nov 28, 2023 2:48:19 PM com.komsibank.BankApp menu
+INFO: login selected
+Nov 28, 2023 2:48:24 PM com.komsibank.account.Login login
+INFO: account number inputted
+Nov 28, 2023 2:48:28 PM com.komsibank.account.Login login
+INFO: password inputted
+Nov 28, 2023 2:48:29 PM com.komsibank.account.Login login
+INFO: login successful
+Nov 28, 2023 2:48:29 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Nov 28, 2023 2:48:29 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Nov 28, 2023 2:48:29 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:48:31 PM com.komsibank.account.HomePage home
+INFO: user: 115800303 logged out
+Nov 28, 2023 2:48:31 PM com.komsibank.account.HomePage home
+INFO: user: 115800303 logged out
+Nov 28, 2023 2:48:33 PM com.komsibank.BankApp menu
+INFO: create account selected
+Nov 28, 2023 2:48:33 PM com.komsibank.account.CreateAccount newAccount
+INFO: filling new account form
+Nov 28, 2023 2:48:39 PM com.komsibank.account.CreateAccount newAccount
+INFO: first name inputted
+Nov 28, 2023 2:48:45 PM com.komsibank.account.CreateAccount newAccount
+INFO: last name inputted
+Nov 28, 2023 2:48:54 PM com.komsibank.account.CreateAccount newAccount
+INFO: email inputted
+Nov 28, 2023 2:49:05 PM com.komsibank.account.CreateAccount newAccount
+INFO: account number inputted
+Nov 28, 2023 2:49:10 PM com.komsibank.account.CreateAccount newAccount
+INFO: password inputted
+Nov 28, 2023 2:49:10 PM com.komsibank.account.CreateAccount newAccount
+INFO: account created successfully
+Nov 28, 2023 2:49:10 PM com.komsibank.account.CreateAccount newAccount
+INFO: user: 3399293834 account created
+Nov 28, 2023 2:49:10 PM com.komsibank.account.CreateAccount newAccount
+INFO: user: 3399293834 logged in
+Nov 28, 2023 2:49:10 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:49:13 PM com.komsibank.account.HomePage home
+INFO: user: 3399293834 logged out
+Nov 28, 2023 2:49:13 PM com.komsibank.account.HomePage home
+INFO: user: 3399293834 logged out
+Nov 28, 2023 2:49:15 PM com.komsibank.BankApp menu
+INFO: application has been stopped

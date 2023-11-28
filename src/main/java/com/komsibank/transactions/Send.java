@@ -35,6 +35,7 @@ public class Send {
             conn.changeBalance(connection,recipient,true,amount);
             conn.insertTransferTransactionData(connection,accNumber,recipient,amount);
             BankApp.mainLogger.info("user: " + accNumber + " sent " + amount + " to user: " + recipient);
+            BankApp.transactionsLogger.info("user: " + accNumber + " sent " + amount + " to user: " + recipient);
 
             System.out.println("Money sent successfully");
             HomePage.home(accNumber);

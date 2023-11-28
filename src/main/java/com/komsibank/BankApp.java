@@ -10,6 +10,7 @@ import java.util.logging.*;
 public class BankApp {
     public static final Logger mainLogger = Logger.getLogger("com.konsibank");
     public static final Logger accountLogger = Logger.getLogger("com.konsibank.account");
+    public static final Logger transactionsLogger = Logger.getLogger("com.konsibank.transactions");
 
     static {
         try {
@@ -22,15 +23,20 @@ public class BankApp {
             }
             Handler mainFileHandler = new FileHandler("application.log", true);
             Handler accountsFileHandler = new FileHandler("accounts.log", true);
+            Handler transactionsFileHandler = new FileHandler("transactions.log", true);
 
             mainFileHandler.setFormatter(new SimpleFormatter());
             accountsFileHandler.setFormatter(new SimpleFormatter());
+            transactionsFileHandler.setFormatter(new SimpleFormatter());
 
             mainLogger.addHandler(mainFileHandler);
             accountLogger.addHandler(accountsFileHandler);
+            transactionsLogger.addHandler(transactionsFileHandler);
 
             mainLogger.setLevel(Level.ALL);
             accountLogger.setLevel(Level.ALL);
+            transactionsLogger.setLevel(Level.ALL);
+
         } catch (IOException ex) {
             mainLogger.log(Level.SEVERE,"Exception occurred",ex);
         }

@@ -3,9 +3,30 @@ package com.komsibank;
 import com.komsibank.account.CreateAccount;
 import com.komsibank.account.Login;
 
+import java.io.IOException;
 import java.util.Scanner;
+import java.util.logging.*;
 
 public class BankApp {
+    public static final Logger mainLogger = Logger.getLogger("com.konsibank");
+
+    static {
+        try {
+            Logger rootLogger = Logger.getLogger("");
+            Handler[] handlers = rootLogger.getHandlers();
+            for (Handler handler : handlers) {
+                if (handler instanceof ConsoleHandler) {
+                    rootLogger.removeHandler(handler);
+                }
+            }
+            Handler fileHandler = new FileHandler("logs/application.log", true);
+            fileHandler.setFormatter(new SimpleFormatter());
+            mainLogger.addHandler(fileHandler);
+            mainLogger.setLevel(Level.ALL);
+        } catch (IOException ex) {
+            mainLogger.log(Level.SEVERE,"Exception occurred",ex);
+        }
+    }
     public static void main(String[] args) {
         System.out.println(">>>>    WELCOME TO KOMSI BANK    <<<<");
 

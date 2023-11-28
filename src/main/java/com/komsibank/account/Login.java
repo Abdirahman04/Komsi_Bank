@@ -29,6 +29,7 @@ public class Login {
 
             if (userExists) {
                 BankApp.mainLogger.info("login successful");
+                BankApp.mainLogger.info("user: " + accNumber + " logged in");
                 System.out.println("Login successful!");
                 HomePage.home(accNumber);
             }

@@ -18,3 +18,27 @@ Nov 28, 2023 1:52:52 PM com.komsibank.account.Login login
 INFO: login successful
 Nov 28, 2023 1:52:56 PM com.komsibank.BankApp menu
 INFO: application has been stopped
+Nov 28, 2023 2:05:09 PM com.komsibank.BankApp main
+INFO: application has started
+Nov 28, 2023 2:05:12 PM com.komsibank.BankApp menu
+INFO: login selected
+Nov 28, 2023 2:05:17 PM com.komsibank.account.Login login
+INFO: account number inputted
+Nov 28, 2023 2:05:21 PM com.komsibank.account.Login login
+INFO: password inputted
+Nov 28, 2023 2:05:21 PM com.komsibank.account.Login login
+INFO: login successful
+Nov 28, 2023 2:05:21 PM com.komsibank.account.HomePage home
+INFO: user: 115800303 logged in
+Nov 28, 2023 2:05:21 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:05:26 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Nov 28, 2023 2:05:29 PM com.komsibank.account.HomePage home
+INFO: user: 115800303 logged in
+Nov 28, 2023 2:05:29 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Nov 28, 2023 2:05:31 PM com.komsibank.account.HomePage home
+INFO: user: 115800303 logged out
+Nov 28, 2023 2:05:33 PM com.komsibank.BankApp menu
+INFO: application has been stopped

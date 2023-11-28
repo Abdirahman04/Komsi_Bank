@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 public class HomePage {
     public static void home(String accNumber) {
+        BankApp.mainLogger.info("home page loaded");
 
         Scanner sc = new Scanner(System.in);
 
@@ -21,11 +22,26 @@ public class HomePage {
 
         String ans = sc.nextLine();
 
-        if (ans.equals("1")) Profile.profile(accNumber);
-        if (ans.equals("2")) Deposit.deposit(accNumber);
-        if (ans.equals("3")) Withdraw.withdraw(accNumber);
-        if (ans.equals("4")) Send.send(accNumber);
-        if (ans.equals("5")) BankApp.menu();
+        if (ans.equals("1")) {
+            BankApp.mainLogger.info("profile selected");
+            Profile.profile(accNumber);
+        }
+        if (ans.equals("2")) {
+            BankApp.mainLogger.info("deposit selected");
+            Deposit.deposit(accNumber);
+        }
+        if (ans.equals("3")) {
+            BankApp.mainLogger.info("withdraw selected");
+            Withdraw.withdraw(accNumber);
+        }
+        if (ans.equals("4")) {
+            BankApp.mainLogger.info("send selected");
+            Send.send(accNumber);
+        }
+        if (ans.equals("5")) {
+            BankApp.mainLogger.info("user: " + accNumber + " logged out");
+            BankApp.menu();
+        }
         else home(accNumber);
     }
 }

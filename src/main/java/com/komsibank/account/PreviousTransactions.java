@@ -1,5 +1,6 @@
 package com.komsibank.account;
 
+import com.komsibank.BankApp;
 import com.komsibank.dbconnection.PostgresConnection;
 
 import java.sql.Connection;
@@ -7,6 +8,7 @@ import java.sql.SQLException;
 
 public class PreviousTransactions {
     public static void transactions(String accNumber) {
+        BankApp.mainLogger.info("user: " + accNumber + " previous transactions displayed");
         System.out.println(">>>>>     PREVIOUS TRANSACTIONS     <<<<<");
 
         PostgresConnection conn = new PostgresConnection();

@@ -1,14 +1,17 @@
 package com.komsibank.transactions;
 
+import com.komsibank.BankApp;
 import com.komsibank.account.HomePage;
 import com.komsibank.dbconnection.PostgresConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.logging.Level;
 
 public class Send {
     public static void send(String accNumber) {
+        BankApp.mainLogger.info("user: " + accNumber + " send page");
         Scanner sc = new Scanner(System.in);
 
         System.out.println(">>>>>     SEND MONEY     <<<<<");
@@ -31,12 +34,13 @@ public class Send {
             conn.changeBalance(connection,accNumber,false,amount);
             conn.changeBalance(connection,recipient,true,amount);
             conn.insertTransferTransactionData(connection,accNumber,recipient,amount);
+            BankApp.mainLogger.info("user: " + accNumber + " sent " + amount + " to user: " + recipient);
 
             System.out.println("Money sent successfully");
             HomePage.home(accNumber);
         } catch (SQLException e) {
             System.out.println("Database connection failure.");
-            e.printStackTrace();
+            BankApp.mainLogger.log(Level.SEVERE,"db connection error", e);
         }
     }
 }

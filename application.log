@@ -236,3 +236,7 @@ Nov 28, 2023 2:57:01 PM com.komsibank.account.HomePage home
 INFO: user: 115800303 logged out
 Nov 28, 2023 2:57:02 PM com.komsibank.BankApp menu
 INFO: application has been stopped
+Nov 28, 2023 2:58:32 PM com.komsibank.BankApp main
+INFO: application has started
+Nov 28, 2023 2:58:38 PM com.komsibank.BankApp menu
+INFO: application has been stopped

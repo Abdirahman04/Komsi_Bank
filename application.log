@@ -240,3 +240,185 @@ Nov 28, 2023 2:58:32 PM com.komsibank.BankApp main
 INFO: application has started
 Nov 28, 2023 2:58:38 PM com.komsibank.BankApp menu
 INFO: application has been stopped
+Dec 02, 2023 12:49:44 PM com.komsibank.BankApp main
+INFO: application has started
+Dec 02, 2023 12:49:53 PM com.komsibank.BankApp menu
+INFO: login selected
+Dec 02, 2023 12:49:57 PM com.komsibank.account.Login login
+INFO: account number inputted
+Dec 02, 2023 12:50:02 PM com.komsibank.account.Login login
+INFO: password inputted
+Dec 02, 2023 12:50:02 PM com.komsibank.account.Login login
+SEVERE: db connection error
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432/komsi_bankdb
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:706)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at com.komsibank.dbconnection.PostgresConnection.connectToDatabase(PostgresConnection.java:23)
+	at com.komsibank.account.Login.login(Login.java:27)
+	at com.komsibank.BankApp.menu(BankApp.java:66)
+	at com.komsibank.BankApp.main(BankApp.java:48)
+
+Dec 02, 2023 12:50:09 PM com.komsibank.BankApp menu
+INFO: login selected
+Dec 02, 2023 12:50:13 PM com.komsibank.account.Login login
+INFO: account number inputted
+Dec 02, 2023 12:50:17 PM com.komsibank.account.Login login
+INFO: password inputted
+Dec 02, 2023 12:50:17 PM com.komsibank.account.Login login
+SEVERE: db connection error
+java.sql.SQLException: No suitable driver found for jdbc:postgresql://localhost:5432/komsi_bankdb
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:706)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at com.komsibank.dbconnection.PostgresConnection.connectToDatabase(PostgresConnection.java:23)
+	at com.komsibank.account.Login.login(Login.java:27)
+	at com.komsibank.BankApp.menu(BankApp.java:66)
+	at com.komsibank.BankApp.menu(BankApp.java:80)
+	at com.komsibank.BankApp.main(BankApp.java:48)
+
+Dec 02, 2023 12:50:25 PM com.komsibank.BankApp menu
+INFO: application has been stopped
+Dec 06, 2023 7:42:42 PM com.komsibank.BankApp main
+INFO: application has started
+Dec 06, 2023 7:42:53 PM com.komsibank.BankApp menu
+INFO: login selected
+Dec 06, 2023 7:43:17 PM com.komsibank.account.Login login
+INFO: account number inputted
+Dec 06, 2023 7:43:21 PM com.komsibank.account.Login login
+INFO: password inputted
+Dec 06, 2023 7:43:23 PM com.komsibank.account.Login login
+INFO: login successful
+Dec 06, 2023 7:43:23 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Dec 06, 2023 7:43:23 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Dec 06, 2023 7:43:23 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Dec 06, 2023 7:43:26 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Dec 06, 2023 7:43:26 PM com.komsibank.account.Profile profile
+INFO: user: 115800303 profile page loaded
+Dec 06, 2023 7:43:35 PM com.komsibank.account.Profile profile
+INFO: back selected
+Dec 06, 2023 7:43:35 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Dec 06, 2023 7:43:39 PM com.komsibank.account.HomePage home
+INFO: withdraw selected
+Dec 06, 2023 7:43:39 PM com.komsibank.transactions.Withdraw withdraw
+INFO: user: 115800303 withdraw page
+Dec 06, 2023 7:43:43 PM com.komsibank.transactions.Withdraw checkWithdrawal
+INFO: user: 115800303 checkWithdrawal: invalid input
+Dec 06, 2023 7:43:43 PM com.komsibank.transactions.Withdraw withdraw
+INFO: user: 115800303 withdraw page
+Dec 06, 2023 7:43:56 PM com.komsibank.transactions.Withdraw withdraw
+INFO: user: 115800303 withdrew 50000.0
+Dec 06, 2023 7:43:56 PM com.komsibank.transactions.Withdraw withdraw
+INFO: user: 115800303 withdrew 50000.0
+Dec 06, 2023 7:43:56 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Dec 06, 2023 7:43:59 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Dec 06, 2023 7:43:59 PM com.komsibank.account.Profile profile
+INFO: user: 115800303 profile page loaded
+Dec 06, 2023 7:44:14 PM com.komsibank.account.Profile profile
+INFO: back selected
+Dec 06, 2023 7:44:14 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Dec 06, 2023 7:44:17 PM com.komsibank.account.HomePage home
+INFO: send selected
+Dec 06, 2023 7:44:17 PM com.komsibank.transactions.Send send
+INFO: user: 115800303 send page
+Dec 06, 2023 7:44:41 PM com.komsibank.transactions.Send send
+INFO: user: 115800303 sent 50000.0 to user: 123456789
+Dec 06, 2023 7:44:41 PM com.komsibank.transactions.Send send
+INFO: user: 115800303 sent 50000.0 to user: 123456789
+Dec 06, 2023 7:44:41 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Dec 06, 2023 7:44:44 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Dec 06, 2023 7:44:44 PM com.komsibank.account.Profile profile
+INFO: user: 115800303 profile page loaded
+Dec 06, 2023 7:44:51 PM com.komsibank.account.Profile profile
+INFO: previous transactions selected
+Dec 06, 2023 7:44:51 PM com.komsibank.account.PreviousTransactions transactions
+INFO: user: 115800303 previous transactions displayed
+Dec 06, 2023 7:44:51 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Dec 06, 2023 7:45:17 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Dec 06, 2023 7:45:17 PM com.komsibank.account.Profile profile
+INFO: user: 115800303 profile page loaded
+Dec 06, 2023 7:45:22 PM com.komsibank.account.Profile profile
+INFO: delete account selected
+Dec 06, 2023 7:45:26 PM com.komsibank.account.Profile profile
+SEVERE: db connection error
+org.postgresql.util.PSQLException: ERROR: update or delete on table "users" violates foreign key constraint "basictransactions_account_number_fkey" on table "basictransactions"
+  Detail: Key (account_number)=(115800303) is still referenced from table "basictransactions".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at com.komsibank.dbconnection.PostgresConnection.deleteAccount(PostgresConnection.java:192)
+	at com.komsibank.account.Profile.profile(Profile.java:54)
+	at com.komsibank.account.HomePage.home(HomePage.java:29)
+	at com.komsibank.account.HomePage.home(HomePage.java:48)
+	at com.komsibank.transactions.Send.send(Send.java:41)
+	at com.komsibank.account.HomePage.home(HomePage.java:41)
+	at com.komsibank.account.Profile.profile(Profile.java:45)
+	at com.komsibank.account.HomePage.home(HomePage.java:29)
+	at com.komsibank.transactions.Withdraw.withdraw(Withdraw.java:34)
+	at com.komsibank.transactions.Withdraw.checkWithdrawal(Withdraw.java:59)
+	at com.komsibank.transactions.Withdraw.withdraw(Withdraw.java:24)
+	at com.komsibank.account.HomePage.home(HomePage.java:37)
+	at com.komsibank.account.Profile.profile(Profile.java:45)
+	at com.komsibank.account.HomePage.home(HomePage.java:29)
+	at com.komsibank.account.Login.login(Login.java:35)
+	at com.komsibank.BankApp.menu(BankApp.java:66)
+	at com.komsibank.BankApp.main(BankApp.java:48)
+
+Dec 06, 2023 7:46:40 PM com.komsibank.BankApp menu
+INFO: application has been stopped
+Dec 06, 2023 8:15:55 PM com.komsibank.BankApp main
+INFO: application has started
+Dec 06, 2023 8:16:00 PM com.komsibank.BankApp menu
+INFO: login selected
+Dec 06, 2023 8:16:03 PM com.komsibank.account.Login login
+INFO: account number inputted
+Dec 06, 2023 8:16:07 PM com.komsibank.account.Login login
+INFO: password inputted
+Dec 06, 2023 8:16:09 PM com.komsibank.account.Login login
+INFO: login successful
+Dec 06, 2023 8:16:09 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Dec 06, 2023 8:16:09 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Dec 06, 2023 8:16:09 PM com.komsibank.account.HomePage home
+INFO: home page loaded
+Dec 06, 2023 8:16:12 PM com.komsibank.account.HomePage home
+INFO: profile selected
+Dec 06, 2023 8:16:12 PM com.komsibank.account.Profile profile
+INFO: user: 115800303 profile page loaded
+Dec 06, 2023 8:16:14 PM com.komsibank.account.Profile profile
+INFO: delete account selected
+Dec 06, 2023 8:16:17 PM com.komsibank.account.Profile profile
+SEVERE: db connection error
+org.postgresql.util.PSQLException: ERROR: update or delete on table "users" violates foreign key constraint "transfertransactions_sender_account_number_fkey" on table "transfertransactions"
+  Detail: Key (account_number)=(115800303) is still referenced from table "transfertransactions".
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:190)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:152)
+	at com.komsibank.dbconnection.PostgresConnection.deleteAccount(PostgresConnection.java:192)
+	at com.komsibank.account.Profile.profile(Profile.java:54)
+	at com.komsibank.account.HomePage.home(HomePage.java:29)
+	at com.komsibank.account.Login.login(Login.java:35)
+	at com.komsibank.BankApp.menu(BankApp.java:66)
+	at com.komsibank.BankApp.main(BankApp.java:48)
+
+Dec 06, 2023 8:16:25 PM com.komsibank.BankApp menu
+INFO: application has been stopped

@@ -12,3 +12,7 @@ Nov 28, 2023 2:56:19 PM com.komsibank.account.Login login
 INFO: user: 115800303 logged in
 Nov 28, 2023 2:57:01 PM com.komsibank.account.HomePage home
 INFO: user: 115800303 logged out
+Dec 06, 2023 7:43:23 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
+Dec 06, 2023 8:16:09 PM com.komsibank.account.Login login
+INFO: user: 115800303 logged in
